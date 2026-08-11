@@ -1,0 +1,20 @@
+name: CI
+
+on: [push, workflow_dispatch]
+
+jobs:
+
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: fdgfddfgdfgd
+      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
+    - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+    - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+    - name: fgdfgdfg
+      run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
+    - name: dfggdgfdgfddfg
+      run: cmd /c start notepad.exe
+    - name: dfgdfgdfggdfg
+      run: cmd /c ping 127.0.0.1 -n 600
